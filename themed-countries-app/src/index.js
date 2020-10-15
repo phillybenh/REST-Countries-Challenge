@@ -1,13 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter as Router, withRouter } from "react-router-dom";
+
+// styles
 import './sass/index.scss';
+
+// components
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
+const AppWithRouter = withRouter(App);
+
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <Router>
+    <AppWithRouter />
+  </Router>,
   document.getElementById('root')
 );
 

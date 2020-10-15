@@ -1,26 +1,28 @@
 import React from 'react';
-import logo from './logo.svg';
-// import './assets/icon-sprite.svg';
-function App() {
+import { Route, Switch, withRouter } from 'react-router-dom';
+
+// components
+import Main from './components/Main';
+import CountryDetail from './components/CountryDetail';
+
+
+function App(props) {
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <h1>Where in the world?</h1>
       </header>
-      
+      <Switch>
+        <Route path="/country/:alpha3code">
+          <CountryDetail />
+        </Route>
+        <Route path="/">
+          <Main />
+        </Route>
+      </Switch>
     </div>
   );
 }
 
-export default App;
+export default withRouter(App);
