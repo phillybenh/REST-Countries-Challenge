@@ -12,8 +12,8 @@ const CountryCard = (props) => {
     region,
   } = props.country;
   return (
-    <section className="CountryCard">
-      <Link to={`/country/${alpha3Code}`} className="TextLink">
+    <Link to={`/country/${alpha3Code}`} className="TextLink">
+      <section className="CountryCard">
         <>
           <img src={flag} alt={`Flag of ${name}`} />
           <h2>{name}</h2>
@@ -30,8 +30,8 @@ const CountryCard = (props) => {
             {capital}
           </p>
         </>
-      </Link>
-    </section>
+      </section>
+    </Link>
   );
 };
 
