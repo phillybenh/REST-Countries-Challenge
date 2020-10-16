@@ -26,13 +26,13 @@ function App(props) {
     <div className="App">
       <header className="App-header">
         <h1>Where in the world?</h1>
-        <button onClick={toggler}>
+        <button onClick={toggler} id="DarkBtn">
           {!dark ? (
             <FontAwesomeIcon icon={faMoonReg} />
           ) : (
             <FontAwesomeIcon icon={faMoonSolid} />
           )}
-          Dark Mode
+            Dark Mode
         </button>
       </header>
       <Switch>
