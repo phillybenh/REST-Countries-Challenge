@@ -5,7 +5,7 @@ import Loader from "react-loader-spinner";
 
 // styles
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
+import { faArrowLeft, faHome } from "@fortawesome/free-solid-svg-icons";
 
 const CountryDetail = (props) => {
   const [countryData, setCountryData] = useState([]);
@@ -36,12 +36,12 @@ const CountryDetail = (props) => {
           <FontAwesomeIcon icon={faArrowLeft} />
           Back
         </button>
-        {/* <Link to={'/'} className="ButtonLink">
+        <Link to={'/'} className="ButtonLink">
         <button>
           <FontAwesomeIcon icon={faHome} />
           Home
         </button>
-      </Link> */}
+      </Link>
       </div>
       {countryData.length === 0 && (
         <Loader
