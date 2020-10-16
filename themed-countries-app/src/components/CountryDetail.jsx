@@ -31,16 +31,18 @@ const CountryDetail = (props) => {
 
   return (
     <>
-      <button onClick={props.history.goBack}>
-        <FontAwesomeIcon icon={faArrowLeft} />
-        Back
-      </button>
-      {/* <Link to={'/'} className="ButtonLink">
+      <div className="BackBtnContainer">
+        <button onClick={props.history.goBack}>
+          <FontAwesomeIcon icon={faArrowLeft} />
+          Back
+        </button>
+        {/* <Link to={'/'} className="ButtonLink">
         <button>
           <FontAwesomeIcon icon={faHome} />
           Home
         </button>
       </Link> */}
+      </div>
       {countryData.length === 0 && (
         <Loader
           type="Grid"
