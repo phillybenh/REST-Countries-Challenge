@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { Link, withRouter } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 
 // components
 import SearchAndFilter from "./SearchAndFilter";
@@ -30,6 +30,15 @@ const Main = (props) => {
   };
   const regionFilter = (event) => {
     event.preventDefault();
+    const region = event.target.value;
+    axios
+      .get(`https://restcountries.eu/rest/v2/region/${region}`)
+      .then((res) => {
+        setCountries(res.data);
+      })
+      .catch((err) => {
+        console.error("Server Error:", err);
+      });
   };
 
   const getCountries = () => {

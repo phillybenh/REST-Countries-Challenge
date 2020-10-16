@@ -5,7 +5,7 @@ import Loader from "react-loader-spinner";
 
 // styles
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowLeft, faHome } from "@fortawesome/free-solid-svg-icons";
+import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 
 const CountryDetail = (props) => {
   const [countryData, setCountryData] = useState([]);

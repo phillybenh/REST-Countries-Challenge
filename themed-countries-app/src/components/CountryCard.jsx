@@ -7,7 +7,6 @@ const CountryCard = (props) => {
     capital,
     flag,
     name,
-    numericCode,
     population,
     region,
   } = props.country;
