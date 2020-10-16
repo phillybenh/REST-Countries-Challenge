@@ -1,12 +1,58 @@
-@import-normalize;
+// @import-normalize;
 @import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,600;0,800;1,300&display=swap");
+@import "variables.scss";
 
-* {
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+body {
   font-family: "Nunito Sans", sans-serif;
-  border: 1px solid red;
+}
+.dark-mode {
+  color: $dark-mode-text;
+  background-color: $dark-mode-background;
+  header,
+  input,
+  textarea,
+  select,
+  form, .CountryCard {
+    background-color: $dark-mode-elements;
+  }
+}
+.light-mode {
+  color: $light-mode-text;
+  background-color: $light-mode-background;
+  input,
+  textarea,
+  select,
+  form {
+    background-color: $light-mode-input;
+  }
+  header,
+  .CountryCard {
+    background-color: $light-mode-elements;
+  }
 }
 
 .App {
   min-height: 100vh;
-  margin: 0 5%; 
+  margin: 0px;
+  padding: 0px;
+
+  header {
+    width: 100%;
+    padding: 15px 40px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    // box-shadow: 0px 1px 2px $light-mode-input;
+    h1 {
+      font-size: $homepage-font-size * 3;
+      font-weight: 800;
+    }
+  }
 }
