@@ -1,12 +1,18 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
 
+// styles
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSearch, faChevronDown } from "@fortawesome/free-solid-svg-icons";
+
 const SearchAndFilter = (props) => {
 console.log("S&F", props)
 
   return (
     <section className="FormContainer" onSubmit={props.countrySearch}>
       <form>
+        <FontAwesomeIcon icon={faSearch} />
+
         <input
           id="country"
           type="search"
@@ -18,6 +24,9 @@ console.log("S&F", props)
       </form>
       <form>
         <select id="region" name="region" onChange={props.regionFilter}>
+          <option value="" disabled selected hidden>
+            Filer by Region...
+          </option>
           <option value="Africa">Africa</option>
           <option value="Americas">Americas</option>
           <option value="Asia">Asia</option>
