@@ -13,7 +13,6 @@ const Main = props => {
         axios
             .get("https://restcountries.eu/rest/v2/all?fields=name;flag;capital;population;region;numericCode;alpha3Code")
             .then(res => {
-                // console.log('res', res)
                 setCountries(res.data);
             })
             .catch(err => {

@@ -5,11 +5,12 @@ import Loader from "react-loader-spinner";
 
 // styles
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
+import { faArrowLeft, faHome } from "@fortawesome/free-solid-svg-icons";
 
 const CountryDetail = (props) => {
   const [countryData, setCountryData] = useState([]);
   const [languages, setLanguages] = useState([]);
+  const [borders, setBorders] = useState([]);
 
   const code = props.match.params.alpha3code;
 
@@ -19,14 +20,14 @@ const CountryDetail = (props) => {
       .then((res) => {
         setCountryData(res.data);
         setLanguages(res.data.languages.map((lang) => lang["name"]));
+        setBorders(res.data.borders);
       })
       .catch((err) => {
         console.error("Server Error:", err);
       });
-  }, []);
+  }, [code]);
 
-  console.log("lang list", languages);
-  // countryData.languages.forEach((lang) => console.log(lang.name));
+  
 
   return (
     <>
@@ -34,6 +35,12 @@ const CountryDetail = (props) => {
         <FontAwesomeIcon icon={faArrowLeft} />
         Back
       </button>
+      {/* <Link to={'/'} className="ButtonLink">
+        <button>
+          <FontAwesomeIcon icon={faHome} />
+          Home
+        </button>
+      </Link> */}
       {countryData.length === 0 && (
         <Loader
           type="Grid"
@@ -81,10 +88,20 @@ const CountryDetail = (props) => {
               </p>
               <p>
                 <span className="InlineHeading">Languages: </span>
-
                 {languages.join(", ")}
               </p>
             </div>
+          </div>
+          <div className="BorderCountries">
+            <p>
+              <span className="InlineHeading">Border Countries: </span>
+              {borders.length === 0 && <span>None</span>}
+            </p>
+            {borders.map((co) => (
+              <Link to={`/country/${co}`} className="ButtonLink">
+                <button>{co}</button>
+              </Link>
+            ))}
           </div>
         </div>
       </section>

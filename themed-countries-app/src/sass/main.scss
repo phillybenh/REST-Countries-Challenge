@@ -1,10 +1,28 @@
 @import "variables.scss";
 
+.dark-mode {
+  color: $dark-mode-text;
+  background-color: $dark-mode-background;
+  header, input, .CountryCard {
+    background-color: $dark-mode-elements;
+  }
+}
+.light-mode {
+  color: $light-mode-text;
+  background-color: $light-mode-background;
+  input {
+    background-color: $light-mode-input;
+  }
+  header, .CountryCard {
+    background-color: $light-mode-elements;
+  }
+}
+
 .MainGrid {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-around;
   align-content: space-around;
   margin: 20px;
   font-size: $homepage-font-size;
@@ -41,17 +59,19 @@
 .CountryDetailsContainer {
   display: flex;
   flex-direction: row;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   justify-content: space-around;
   align-content: space-around;
   // margin: 20px;
   font-size: $detail-font-size;
   .CountryDataContainer {
+    min-width: 400px;
+
     width: 45%;
     .CountryData {
       display: flex;
       flex-direction: row;
-      flex-wrap: nowrap;
+      flex-wrap: wrap;
       justify-content: space-between;
       align-content: space-around;
     }
@@ -60,6 +80,8 @@
     font-size: $detail-font-size * 2;
   }
   img {
+    min-width: 400px;
+
     width: 45%;
   }
 }
